@@ -1,14 +1,23 @@
 <template>
 	<div class="wrapper">
+		<section class="demo">
+			<div class="demo-content">
+				<p>Minor Api, using the most popular one - Github for instance</p>
+				<div class="container">
+					<ul class="ul-line">
+						<li>Creating UI components for search</li>
+						<li>Tracking data from Input</li>
+						<li>Sending requests with user data</li>
+						<li>Processing request-response</li>
+						<li>Adding received data</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 		<header class="navbar">
 			<div class="container">
 				<div class="navbar-content">
-					<div class="logo">GITHUB FINDER</div>
-					<ul class="navbar-list">
-						<li class="navbar-item" v-for="link in links" :key="link.title">
-							<router-link class="navbar-link" :title="link.title" :to="link.url">{{ link.title }}</router-link>
-						</li>
-					</ul>
+					<div class="logo">Github Finder</div>
 				</div>
 			</div>
 		</header>
@@ -16,23 +25,59 @@
 	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			links: [
-				{title: "Home", url: "/"},
-				{title: "Find", url: "/find"},
-			],
-		}
-	},
-}
-</script>
-
 <style lang="scss">
-   .navbar-link {
-      &.router-link-exact-active {
-         color: #5247e7;
-      }
-   }
+.title {
+	font-weight: 700 !important;
+}
+.container {
+	width: 600px !important;
+}
+.logo {
+	margin: 0 auto;
+}
+.demo {
+	margin: 0 auto;
+	font-size: 1.2rem;
+	width: 100%;
+	h2 {
+		font-size: 1.6rem;
+		padding-bottom: 0.66rem;
+		text-align: center;
+	}
+	div {
+		text-align: center;
+	}
+	.mb {
+		margin-top: 30px;
+	}
+	&-content {
+		padding: 40px 0;
+		background-color: #fff;
+		margin-top: 120px;
+	}
+	.ul-line li {
+		text-align: left;
+		position: relative;
+		list-style: none;
+		display: flex;
+		padding-left: 0.625rem;
+	}
+	.ul-line li::before {
+		content: "\2013";
+		display: block;
+		margin-right: 0.625rem;
+	}
+	.ul-line {
+		margin-top: 30px;
+	}
+}
+section,
+.section {
+	padding: 0 !important;
+}
+@media (max-width: 400px) {
+	.mb {
+		margin-top: 10px !important;
+	}
+}
 </style>

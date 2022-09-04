@@ -7,12 +7,12 @@ const routes = [
 	{
 		path: "/",
 		name: "Home",
-		component: Home,
+		component: Find,
 	},
 	{
 		path: "/find",
 		name: "find",
-		component: Find,
+		component: Home,
 	},
 	{
 		path: "/:pathMatch(.*)*",

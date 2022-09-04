@@ -45,20 +45,6 @@ ul, li {
   padding: 0;
 }
 
-section, .section {
-  position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -70,7 +56,7 @@ section, .section {
   display: flex;
   flex-direction: column;
   &.wrapper-content--fixed {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 }
 
