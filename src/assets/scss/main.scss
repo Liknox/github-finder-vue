@@ -125,4 +125,81 @@ textarea {
 	width: 100%;
 }
 
-@import "./common.scss";
+.btn {
+	display: inline-block;
+	padding: 0.8em 2em;
+	line-height: 1;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 30px;
+
+	// default btn
+	&.btnDefaul {
+		color: #ffffff;
+		border: 1px solid #333333;
+		background-color: #333333;
+	}
+
+	// primiry btn
+	&.btnPrimary {
+		color: #ffffff;
+		border: 1px solid #494ce8;
+		background-color: #494ce8;
+	}
+
+	// danger btn
+	&.btnDanger {
+		color: #ffffff;
+		border: 1px solid hsl(0, 48%, 48%);
+		background-color: #b53f3f;
+	}
+
+	&.btnWhite {
+		color: #333333;
+		border: 1px solid #ffffff;
+		background-color: #ffffff;
+	}
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	padding: 20px 0;
+	background-color: #ffffff;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+	&.logo {
+		font-size: 24px;
+	}
+}
+
+.navbar-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar-item {
+	margin-right: 30px;
+	cursor: pointer;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.navbar-link {
+	display: block;
+	color: #aaaad5;
+	// active link
+	&.active {
+		color: #4343aa;
+	}
+}
