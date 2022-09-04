@@ -65,7 +65,7 @@ input {
 	padding: 16px 16px 16px 56px !important;
 	margin-bottom: 0px;
 	border-radius: 30px;
-	color: #909399;
+	/* color: #909399; */
 	font-size: 16px;
 	min-width: 400px;
 	height: auto;
