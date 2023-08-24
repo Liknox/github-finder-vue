@@ -1,5 +1,4 @@
-import {createWebHashHistory, createRouter} from "vue-router"
-import Home from "@/pages/Home.vue"
+import { createWebHashHistory, createRouter } from "vue-router"
 import NotFound from "@/pages/404.vue"
 import Find from "@/pages/Find.vue"
 
@@ -8,11 +7,6 @@ const routes = [
 		path: "/",
 		name: "Home",
 		component: Find,
-	},
-	{
-		path: "/find",
-		name: "find",
-		component: Home,
 	},
 	{
 		path: "/:pathMatch(.*)*",

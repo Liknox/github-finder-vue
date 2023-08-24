@@ -11,13 +11,13 @@
 
 <style lang="scss" scoped>
 .wrapper-content {
-   min-height: 80vh;
-   display: flex;
-   align-items: center;
-   text-align: center;
-   justify-content: center;
-   .title {
-      margin-bottom: 0;
-   }
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	.title {
+		margin-bottom: 0;
+	}
 }
 </style>

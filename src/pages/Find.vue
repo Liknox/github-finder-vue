@@ -9,7 +9,7 @@
 				<search :value="search" placeholder="Type username..." @search="search = $event" />
 				<button v-if="!repos" class="btn btnPrimary" @click="getRepos">Search!</button>
 				<button v-else class="btn btnPrimary" @click="getRepos">Search again!</button>
-				<div class="repos__wrapper" v-if="repos">
+				<div class="repos__wrapper" v-if="repos && repos?.length != 0">
 					<div class="repos-item" v-for="repo in repos" :key="repo.id">
 						<div class="repos-info">
 							<a class="link" :href="repo.html_url" target="_blank">{{ repo.name }}</a>
@@ -17,6 +17,7 @@
 						</div>
 					</div>
 				</div>
+				<div v-else-if="repos != null && repos?.length == 0" class="no-repos">There is no public repos!</div>
 			</div>
 		</section>
 	</div>
@@ -40,21 +41,21 @@ export default {
 		getRepos() {
 			axios
 				.get(`https://api.github.com/users/${this.search}/repos`)
-				.then((res) => {
-					console.log(res)
+				.then(res => {
+               console.log(res)
 					this.error = null
 					this.repos = res.data
+               console.log(this.repos)
 				})
-				.catch((err) => {
-					console.log(err)
+				.catch(err => {
 					this.repos = null
 					this.error = "Can't find this user"
 				})
 		},
 	},
 	created() {
-		document.body.addEventListener("keyup", (e) => {
-			if (e.keyCode === 13) this.getRepos()
+		document.body.addEventListener("keyup", e => {
+			if (e.key === "Enter") this.getRepos()
 		})
 	},
 }
@@ -65,6 +66,11 @@ export default {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+
+   button {
+      margin: 10px;
+   }
+   
 }
 
 .repos__wrapper {
@@ -85,6 +91,12 @@ export default {
 .title {
 	margin: 0;
 	font-weight: normal;
+}
+
+.no-repos {
+	font-size: 20px;
+	text-decoration: underline;
+	margin-top: 10px;
 }
 
 @media (max-width: 480px) {

@@ -46,7 +46,7 @@ svg {
 /* Search */
 .wrapper-search {
 	position: relative;
-   margin: 15px 0;
+	margin: 15px 0;
 }
 .search {
 	top: 0px;
@@ -72,8 +72,8 @@ input {
 }
 
 @media (max-width: 480px) {
-   input {
-      min-width: 350px;
-   }
+	input {
+		min-width: 350px;
+	}
 }
 </style>
