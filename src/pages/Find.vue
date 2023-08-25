@@ -26,6 +26,7 @@
 <script>
 import search from "@/components/Search.vue"
 import axios from "axios"
+import getApi from "@/api"
 export default {
 	components: {
 		search,
@@ -40,12 +41,10 @@ export default {
 	methods: {
 		getRepos() {
 			axios
-				.get(`https://api.github.com/users/${this.search}/repos`)
+				.get(getApi(this.search))
 				.then(res => {
-               console.log(res)
 					this.error = null
 					this.repos = res.data
-               console.log(this.repos)
 				})
 				.catch(err => {
 					this.repos = null
@@ -62,15 +61,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper-content {
+	min-height: calc(100vh - 105px);
+}
+
 .container {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 
-   button {
-      margin: 10px;
-   }
-   
+	button {
+		margin: 10px;
+	}
 }
 
 .repos__wrapper {

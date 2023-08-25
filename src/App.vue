@@ -1,5 +1,13 @@
 <template>
 	<div class="wrapper">
+      <header class="navbar">
+			<div class="container">
+				<div class="navbar-content">
+					<div class="logo">Github Finder</div>
+				</div>
+			</div>
+		</header>
+		<router-view />
 		<section class="demo">
 			<div class="demo-content">
 				<p>Minor Api, using the most popular one - Github for instance</p>
@@ -14,14 +22,6 @@
 				</div>
 			</div>
 		</section>
-		<header class="navbar">
-			<div class="container">
-				<div class="navbar-content">
-					<div class="logo">Github Finder</div>
-				</div>
-			</div>
-		</header>
-		<router-view />
 	</div>
 </template>
 
@@ -53,7 +53,7 @@
 	&-content {
 		padding: 40px 0;
 		background-color: #fff;
-		margin-top: 120px;
+		/* margin-top: 120px; */
 	}
 	.ul-line li {
 		text-align: left;

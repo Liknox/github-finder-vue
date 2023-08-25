@@ -8,7 +8,6 @@
 				</svg>
 			</div>
 		</div>
-
 		<input type="text" :placeholder="placeholder" v-model="search" />
 	</div>
 </template>
@@ -32,7 +31,6 @@ export default {
 	},
 	watch: {
 		search(val) {
-			// console.log(val)
 			this.$emit("search", val)
 		},
 	},
